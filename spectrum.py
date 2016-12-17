@@ -22,23 +22,23 @@ def slowchange(bridge, new_color_xy, light_id=None):
         break
 
     new_x, new_y = new_color_xy
-    step = 1
+    step = 10
     if old_x > new_x:
-        step = -1
+        step = -10
     for x in range(int(old_x*1000), int(new_x*1000), step):
+        sleep(0.5)
         for light in lights:
-            sleep(0.001)
             light.xy = [x/1000, old_y]
 
-    step = 1
+    step = 10
     if old_y > new_y:
-        step = -1
+        step = -10
     for y in range(int(old_y*1000), int(new_y*1000), step):
+        sleep(0.5)
         for light in lights:
-            sleep(0.001)
             light.xy = [new_x, y/1000]
 
 while True:
     newcolor = [random(), random()]
     print("Change color to %s" % newcolor)
-    slowchange(b, newcolor, 1)
+    slowchange(b, newcolor)
