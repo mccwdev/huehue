@@ -1,7 +1,7 @@
 from phue import Bridge, Light
 import time
 
-b = Bridge('192.168.251.50')  # Enter bridge IP here.
+b = Bridge('192.168.7.214')  # Enter bridge IP here.
 
 # If running for the first time, press button on bridge and run with b.connect() uncommented
 # b.connect()
